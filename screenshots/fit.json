@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/fit",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 1814,
+      "bodyTextHash": "2bb57c87921b677b3ad3aaff88fe534c4a94ac8715d5d15879cd8455adca9ff4",
+      "bodyTextPrefix": "STARK INDUSTRIES Pulse Collection FitSense IronSync Support Shop",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/fit.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 1756,
+      "bodyTextHash": "0f3b255a6094bff3b02d5e3f27222691a36cbca85547cc415c856e1267a696ea",
+      "bodyTextPrefix": "STARK INDUSTRIES FITSENSE The white space is not another sensor.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/fit-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/fit.json"
+}

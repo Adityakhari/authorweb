@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 3118,
+      "bodyTextHash": "67c3f887383c065e2d304b0ad6a247718b5b5d6b48c78d44c1024ef6cc79f992",
+      "bodyTextPrefix": "STARK INDUSTRIES Pulse Collection FitSense IronSync Support Shop",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 3060,
+      "bodyTextHash": "c9f0dd64d8e10bf59bcc8bf6451ba69c9992d7497ad020b45ee87ed1c9263071",
+      "bodyTextPrefix": "STARK INDUSTRIES IRONPULSE SERIES · D2C Certainty on your wrist.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

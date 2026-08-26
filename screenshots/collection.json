@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/collection",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 1256,
+      "bodyTextHash": "38d79e9ece096dc37033ae0ef8055bea97df8c059876f59293ca82f591035b34",
+      "bodyTextPrefix": "STARK INDUSTRIES Pulse Collection FitSense IronSync Support Shop",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/collection.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "IronPulse — Fit-verified wearables by Stark Industries",
+      "hasCanvas": false,
+      "bodyTextLen": 1198,
+      "bodyTextHash": "c65efb156bdc415636297f3ff00fab2ad82470986961ec8b6fa29238887c443e",
+      "bodyTextPrefix": "STARK INDUSTRIES COLLECTION IronPulse. Three ways to sit flush. ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/collection-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/collection.json"
+}
