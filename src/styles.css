@@ -1,0 +1,345 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #05070c;
+  --color-surface: #0a1220;
+  --color-surface-2: #101a2c;
+  --color-fg: #e8eef8;
+  --color-muted: #8b9bb4;
+  --color-faint: #5d6d86;
+  --color-primary: #00c8ff;
+  --color-primary-fg: #021018;
+  --color-neon: #3ee0ff;
+  --color-sport: #3ee0c2;
+  --color-pro: #00c8ff;
+  --color-elite: #d7dee8;
+  --color-border: color-mix(in oklab, #00c8ff 26%, transparent);
+  --color-border-strong: color-mix(in oklab, #00c8ff 48%, transparent);
+  --color-ring: #00c8ff;
+  --color-danger: #fb7185;
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Manrope", ui-sans-serif, sans-serif;
+  --font-mono: "Sora", ui-monospace, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-2xl: 40px;
+
+  --shadow-neon:
+    0 0 0 1px color-mix(in oklab, #00c8ff 42%, transparent),
+    0 0 28px color-mix(in oklab, #00c8ff 18%, transparent);
+  --shadow-neon-strong:
+    0 0 0 1px color-mix(in oklab, #3ee0ff 70%, transparent),
+    0 0 40px color-mix(in oklab, #00c8ff 28%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 40%, transparent);
+    color: var(--color-fg);
+  }
+
+  img {
+    outline: 1px solid color-mix(in oklab, white 10%, transparent);
+    outline-offset: -1px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient {
+    background: linear-gradient(180deg, #f4fbff 0%, #9adfff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .neon-glow-strong {
+    box-shadow: var(--shadow-neon-strong);
+  }
+
+  .grid-fade {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--color-primary) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--color-primary) 8%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  }
+}
+
+/* Corner-bracket HUD frame */
+.neon-frame {
+  position: relative;
+  isolation: isolate;
+}
+.neon-frame::before,
+.neon-frame::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.neon-frame::before {
+  box-shadow: var(--shadow-neon);
+}
+.neon-corners {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.neon-corners span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-neon);
+  border-style: solid;
+  opacity: 0.9;
+}
+.neon-corners .tl {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+.neon-corners .tr {
+  top: -1px;
+  right: -1px;
+  border-width: 2px 2px 0 0;
+}
+.neon-corners .bl {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 2px 2px;
+}
+.neon-corners .br {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+/* IronPulse watch — CSS product */
+.iron-watch {
+  --watch-metal: #9aa7b8;
+  --watch-dark: #0b1018;
+  --watch-face: #070b12;
+  --watch-accent: var(--color-primary);
+  --band: #123048;
+  position: relative;
+  width: min(var(--watch-size, 240px), 68vw);
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.55));
+}
+.iron-watch .band {
+  position: absolute;
+  left: 50%;
+  width: 42%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(90deg, #061018, var(--band) 18%, #1c3a52 50%, var(--band) 82%, #061018);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+}
+.iron-watch .band.top {
+  top: 0;
+  height: 30%;
+}
+.iron-watch .band.bot {
+  bottom: 0;
+  height: 30%;
+}
+.iron-watch[data-variant="pro"] {
+  --band: #1a1f28;
+  --watch-metal: #c5ced8;
+}
+.iron-watch[data-variant="pro"] .band {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #2a313c 0 10%,
+      #8b96a4 10% 12%,
+      #1c222c 12% 22%
+    );
+}
+.iron-watch[data-variant="elite"] {
+  --band: #1a120c;
+  --watch-accent: #e8d5b5;
+  --watch-metal: #d9c39a;
+}
+.iron-watch[data-variant="elite"] .band {
+  background:
+    linear-gradient(90deg, #0c0806, #3a2a1c 20%, #6a5340 50%, #3a2a1c 80%, #0c0806);
+}
+
+.iron-watch .case {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #f2f7ff 0 2%, transparent 18%),
+    conic-gradient(from 210deg, #3a4654, #d5dee8, #5a6572, #0c1016, #c9d2dc, #3a4654);
+  padding: 7%;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.18),
+    0 10px 30px rgb(0 200 255 / 0.18),
+    0 0 48px color-mix(in oklab, var(--watch-accent) 35%, transparent);
+}
+.iron-watch .bezel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0 6deg,
+      rgb(255 255 255 / 0.14) 6deg 6.6deg
+    ),
+    radial-gradient(circle, #0b111a 58%, #1c2633 72%, #0a0e14 100%);
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--watch-accent) 55%, transparent);
+}
+.iron-watch .crystal {
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.16), transparent 36%),
+    var(--watch-face);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    inset 0 0 24px rgb(0 0 0 / 0.7),
+    0 0 0 1px color-mix(in oklab, var(--watch-accent) 40%, transparent);
+}
+.iron-watch .face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e8f6ff;
+  font-family: var(--font-display);
+}
+.iron-watch .time {
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.iron-watch .sub {
+  margin-top: 6px;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--watch-accent);
+}
+.iron-watch .rings {
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  border: 2px solid color-mix(in oklab, var(--watch-accent) 35%, transparent);
+  border-top-color: var(--watch-accent);
+  border-right-color: color-mix(in oklab, var(--watch-accent) 70%, transparent);
+  animation: spin 12s linear infinite;
+}
+.iron-watch .rings.inner {
+  inset: 18%;
+  animation-duration: 7s;
+  animation-direction: reverse;
+  opacity: 0.7;
+}
+.iron-watch .hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 2px;
+  height: 28%;
+  background: var(--watch-accent);
+  transform-origin: bottom center;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--watch-accent);
+}
+.iron-watch .hr-dot {
+  position: absolute;
+  bottom: 18%;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: #9adfff;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iron-watch .rings,
+  .iron-watch .hand {
+    animation: none !important;
+  }
+}
+
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 3px,
+    rgb(0 200 255 / 0.03) 3px 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+}
